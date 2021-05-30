@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .line-chart-container {
+            max-width: 1050px;
+            /* border: 3px solid red; */
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .tree-map {
+            max-width: 1050px;
+            /* border: 3px solid red; */
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            /* border: 2px solid purple; */
+            overflow: visible;
+        }
+
+
+        h1 {
+            /* border: 2px solid green; */
+        }
+
+        .pop-up {
+            position: absolute; 
+            border: 1px solid black;
+            border-radius: 1px;
+            line-height: 1.2;
+            width: 200px;
+            pointer-events: none;
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+    <!-- add your script blocks at the end -->
+
+</head>
+
+
+
+<body>
+    <div class="line-chart-container">
+        <h1 class="headline">
+            <center>The rise of cryptocurrencies</center>
+        </h1>
+        <!-- <img src="layer4.png" align="right">  -->
+
+        <svg class='svg-line', width="1050px" height="500px">
+
+        </svg>
+        <p><center> Write some references and stuff here
+        </center></p>
+    
+    <div class="tree-map" id="my_dataviz">
+        <svg class='svg-tree-map', width="1050px" height="1000px">
+            
+        </svg>
+        <p><center> Write some references and stuff here
+        </center></p>
+    </div>
+        
+
+        <div class="pop-up">
+        </div>
+
+    </div>
+</body>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<script>
+    let width = 1000;
+    let height = 1000;
+
+    // let svg = d3.select("body")
+    //     .select(".line-chart-container")
+    //     .select(".svg-line")
+
+    var margin = { top: 30, right: 10, bottom: 10, left: 30 };
+
+    // d3.csv("BTC-USD.csv").then(function (data) {
+        // let width = 1000;
+        // let height = 1000;
+
+    //     data.forEach(function (row) {
+    //         row.date = new Date(row.Date)
+    //         row.Close = +row.Close
+    //     })        
+
+    //     console.log(data)
+
+    //     // let margin = { top: 30, right: 10, bottom: 10, left: 30 };
+
+    //     //d3 scales for the x and y axis
+    //     //domain takes the data we have and maps them into SVG space
+    //     //in this case we need to use scaleTime because we're dealin time data
+    //     let x = d3.scaleTime()
+    //         .domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+    //         .range([margin.left, width - margin.right])
+
+    //     //in this case we need to use scaleLinear because we're dealin linear data
+    //     let y = d3.scaleLinear()
+    //         .domain(d3.extent(data.map(function (d) { return d.Close })))
+    //         .range([height - margin.bottom, margin.top])
+
+
+    //     //define the settings for our axes
+    //     //https://github.com/d3/d3-axis
+    //     let yAxisSettings = d3.axisLeft(y) //set axis to the left
+    //         .ticks(5) //approx how many ticks, the function will not necesarily give you that number
+    //         .tickSize(-width) //size of tick lines
+    //         .tickFormat(d3.format(".0f")) //what format do you want https://github.com/d3/d3-format 
+    //         .tickPadding(10) //distance from tick labels to tick marks
+
+
+    //     let xAxisSettings = d3.axisBottom(x)
+    //         .ticks(10)
+    //         .tickSize(10)
+    //         .tickPadding(10)
+
+    //     let bg = svg.append("rect")
+    //         .attr("x", margin.left)
+    //         .attr("y", 0)
+    //         .attr("width", width)
+    //         .attr("height", height)
+    //         .style("fill", "rgba(0,0,0,.04)")
+
+    //     //adding to the axes to our chart
+    //     let xAxisTicks = svg.append("g")
+    //         .attr("class", "x axis") //give each axis a class
+    //         .call(xAxisSettings)
+    //         .attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+    //     let yAxisTicks = svg.append("g")
+    //         .attr("class", "y axis")
+    //         .call(yAxisSettings)
+    //         .attr("transform", `translate(${margin.left},0)`)
+
+    //     let line = d3.line() //define a line function
+    //         .defined(d => !isNaN(d.Close))
+    //         .x(function (d) { return x(d.date) }) //accessing date 
+    //         .y(function (d) { return y(d.Close) }) //accesssing value 
+
+    //     // //neat trick https://observablehq.com/@d3/line-with-missing-data
+
+    //     let line_path = svg.append("path") //Add a grouping element. It's useful to organize svg elements. https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+    //         .attr("class", "line") // Give circles a class name.
+    //         .attr("d", line(data))
+    //         .style("fill", "none")
+    //         .style("stroke", "darkblue")
+    //         .style("stroke-width", 1.8)
+
+    // })
+
+    // append the svg object to the body of the page
+    var svg2 = d3.select("body")
+        .select(".tree-map")
+        .select(".svg-tree-map")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+    
+    // Read data
+    d3.csv("crypto_marketcap_100_v2.csv").then(function(data) {
+        
+        data.forEach(function (row) {
+            row.MarketCap = +row.MarketCap
+        }) 
+        console.log(data)
+
+        // stratify the data: reformatting for d3.js
+        var root = d3.stratify()
+        .id(function(d) { return d.Currency; })   // Name of the entity (column name is name in csv)
+        .parentId(function(d) { return d.Parent; }) 
+        (data);
+        
+        root.sum(function(d) { return +d.MarketCap })   // Compute the numeric value for each entity
+
+        // Then d3.treemap computes the position of each element of the hierarchy
+        // The coordinates are added to the root object above
+        d3.treemap()
+        .size([width, height])
+        .padding(4)
+        (root)
+
+        console.log(root.leaves())
+        // use this information to add rectangles:
+        svg2
+        .selectAll("rect")
+        .data(root.leaves())
+        .enter()
+        .append("rect")
+            .attr('x', function (d) { return d.x0; })
+            .attr('y', function (d) { return d.y0; })
+            .attr('width', function (d) { return d.x1 - d.x0; })
+            .attr('height', function (d) { return d.y1 - d.y0; })
+            .style("stroke", "black")
+            .style("fill", "#69b3a2");
+
+        // and to add the text labels
+        svg2
+        .selectAll("text")
+        .data(root.leaves())
+        .enter()
+        .append("text")
+            .attr("x", function(d){ return d.x0+10})    // +10 to adjust position (more right)
+            .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
+            .text(function(d){ return d.data.Currency})
+            .attr("font-size", "15px")
+            .attr("fill", "black")
+        })
+
+        console.log(svg2)
+
+</script>
