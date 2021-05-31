@@ -4,15 +4,33 @@
 <head>
     <meta charset="utf-8">
     <style>
-        .line-chart-container {
+        .texts {
             max-width: 1050px;
             /* border: 3px solid red; */
             margin: 0 auto;
+            margin-top: 20px;
+            font-family: 'Arial', 'Franklin Gothic Medium', 'Arial Narrow' , sans-serif;
+        }
+        .line-chart-container {
+            
+            max-width: 1050px;
+            /* border: 3px solid red; */
+            margin: 0 auto;
+            margin-top: 20px;
             /* auto centers the div */
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
         .tree-map {
+            margin-top: 50px;
+            max-width: 1050px;
+            /* border: 3px solid red; */
+            /* margin: 0 auto; */
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .world-map {
             max-width: 1050px;
             /* border: 3px solid red; */
             margin: 0 auto;
@@ -20,15 +38,47 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 170px;
+            margin-right: 170px;
+            font-family: 'Arial', 'Franklin Gothic Medium', 'Arial Narrow' , sans-serif;
+            font-size:20px;
+        }
+
         svg {
             /* border: 2px solid purple; */
             overflow: visible;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .source {
+            font-size: 14px;
+            text-align:right;
+            margin-right: 50px;
+        }
+
+        .subtitles {
+            font-size: 24px;
+            text-align:center;
+            margin-top: 50px;
+            margin-bottom:-20px;
+            font-family: 'Arial';
+            color: grey;
         }
 
 
         h1 {
             /* border: 2px solid green; */
+            font-family: 'Arial'
         }
+
+        .ticks {
+            stroke:lightgray;
+            opacity:0.3
+            }
 
         .pop-up {
             position: absolute; 
@@ -39,6 +89,7 @@
             pointer-events: none;
             background-color: white;
             padding: 10px;
+            opacity: 0
         }
     </style>
     <!-- add your script blocks at the end -->
@@ -48,39 +99,71 @@
 
 
 <body>
-    <div class="line-chart-container">
-        <h1 class="headline">
-            <center>The rise of cryptocurrencies</center>
+    <div>
+        <h1 class="texts">
+        <center>The Rise of Cryptocurrencies</center>
         </h1>
-        <!-- <img src="layer4.png" align="right">  -->
+    </div>
 
+    <div class="line-chart-container">
+        <p>Cryptocurrencies have seen their fortunes soar over recent years propelled by large government
+            spending in developed countries. No longer restricted to hobbyists and technologists, cryptocurrencies 
+            have joined the mainstream as an alternative investment asset. This is visible from the gains during the 
+            pandemic where retail investors funnelled their stimulus checks and benefits into riskier asset classes.
+        </p>
+        <p>Bitcoin, the first and flagship cryptocurrency was worth around $6,000 at the start of the pandemic. Earlier this year,
+            it was trading at $60,000 for 1 Bitcoin, a ten-fold increase in a year. In fact, Bitcoin's gains pale in comparison to 
+            some of the other more niche cryptocurrencies such as Aave and the joke and meme cryptocurrency Dogecoin. </p>
+        <pre class="subtitles"> 1 Bitcoin to USD over last 5 years </pre>
         <svg class='svg-line', width="1050px" height="500px">
-
         </svg>
-        <p><center> Write some references and stuff here
-        </center></p>
+
+        <pre class="source"> Source: https://finance.yahoo.com/quote/BTC-USD/history?p=BTC-USD </pre>
     
+
     <div class="tree-map" id="my_dataviz">
-        <svg class='svg-tree-map', width="1050px" height="1000px">
+
+        <p> In the early years of the decade, Bitcoin accounted for 75-90% of the total market capitalization of all cryptocurrencies.
+            This overarching influence has reduced over recent years as newer cryptocurrencies such as Ether, XRP and Cardano grow and
+            capture a larger share of the pie. Nevertheless, Bitcoin still holds almost 40% of the total market capitalization of 
+            all cryptocurrencies. </p>
+
+        <p> Successful cryptocurrencies generally see exponential growth in their value in their early years as user adoption 
+            picks up. However, cryptocurrencies such as Ether and Bitcoin that have been around for a while still witness 
+            growth rates far higher than traditional bank deposits or stock market returns. 
+        </p>
+        <pre class="subtitles"> Cryptocurrencies by Market Capitalization </pre>
+        <svg class='svg-tree-map', width="1050px" height="700px">
             
         </svg>
-        <p><center> Write some references and stuff here for tree map
-        </center></p>
+        <pre class="source"> Source: https://coinmarketcap.com/ </pre>
     </div>
 
     <div class="world-map" id="world-map">
-        <svg class='svg-world-map', width="1050px" height="1000px">
+        
+        <p> Such large gains accompanied by staggering volatility has made some retail investors wealthy in a short span of time. 
+            Governments have so far been reluctant to regulate or clamp down on cryptocurrencies instead choosing to maintain a watchful
+            eye. However, use of cryptocurrencies for money laundering and tax evasion have led to increasing clampdown in some countries. 
+        </p>
+        <p>
+            The recent move by China to restrict cryptocurrency trades led to a plunge in crypo valuations across the board. This is despite 
+            China being the leader in cryptocurrency mining. 
+        </p>
+        <pre class="subtitles"> Countries by Cryptocurrency Legality </pre>
+        <svg class='svg-world-map', width="1050px" height="620px">
             
         </svg>
-        <p><center> Write some references and stuff here for world map
-        </center></p>
+        <pre class="source"> https://www.loc.gov/law/help/cryptocurrency/world-survey.php</pre>
+        <p>
+            As is visible in the map, there is a clear divide between developed and developing countries in their approach 
+            towards cryptocurrencies. Developed countries have been cautious but largely allowed the cryptocurrency market to
+            flourish with minimal regulation. Developing countries on the other hand have largely clamped down or ignored 
+            this market. 
+        </p>
     </div>
         
 
-    <!-- <div class="pop-up">
-    </div> -->
-
-    </div>
+    <div class="pop-up">
 </body>
 
 <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -92,15 +175,13 @@
 <script>
     let width = 1000;
     let height = 850;
+    var margin = { top: 30, right: 10, bottom: 10, left: 30 };
 
     let svg = d3.select("body")
         .select(".line-chart-container")
         .select(".svg-line")
         
-
-    var margin = { top: 30, right: 10, bottom: 10, left: 30 };
-
-    d3.csv("BTC-USD.csv").then(function (data) {
+    d3.csv("BTC-USD2_v.csv").then(function (data) {
         let width = 1000;
         let height = 500;
 
@@ -130,22 +211,60 @@
         //https://github.com/d3/d3-axis
         let yAxisSettings = d3.axisLeft(y) //set axis to the left
             .ticks(5) //approx how many ticks, the function will not necesarily give you that number
-            .tickSize(-width) //size of tick lines
-            .tickFormat(d3.format(".0f")) //what format do you want https://github.com/d3/d3-format 
+            .tickSize(10) //size of tick lines
+            .tickFormat(d3.format("$,.0f")) //what format do you want https://github.com/d3/d3-format 
             .tickPadding(10) //distance from tick labels to tick marks
 
 
         let xAxisSettings = d3.axisBottom(x)
-            .ticks(10)
+            .ticks(5)
             .tickSize(10)
             .tickPadding(10)
 
-        let bg = svg.append("rect")
-            .attr("x", margin.left)
-            .attr("y", 0)
-            .attr("width", width)
-            .attr("height", height)
-            .style("fill", "rgba(0,0,0,.04)")
+        function line_func(col, x1,x2,y1,y2,wid,opq) {
+            svg.append("line") //we can add additional highlight lines
+                .attr("x1", x1)
+                .attr("x2", x2)
+                .attr("y1", y1)
+                .attr("y2", y2)
+                .style("stroke", col)
+                .style("stroke-width", wid)
+                .style("opacity", opq) }
+
+        function set_rect(x, y, colour) {
+            svg.append("rect")
+            .attr("class", "rect")
+            .attr("x", x)
+            .attr("y", y)
+            .attr('width', 220)
+            .attr('height', height)
+            .style("fill", colour)
+            .style("opacity", 0.2)
+        }
+
+        function set_text(text, x, y, colour, font_size) {
+            svg.append("text")
+            .attr("class", "label")
+            .attr("x", x)
+            .attr("y", y)
+            .style("fill", colour)
+            .style("font-size", font_size)
+            .text(text)
+
+        }
+
+        line_func("black", margin.left, width, y(10000), y(10000), ".25", 0.5)
+        line_func("black", margin.left, width, y(20000), y(20000), ".25", 0.5)
+        line_func("black", margin.left, width, y(30000), y(30000), ".25", 0.5)
+        line_func("black", margin.left, width, y(40000), y(40000), ".25", 0.5)
+        line_func("black", margin.left, width, y(50000), y(50000), ".25", 0.5)
+        line_func("black", margin.left, width, y(60000), y(60000), ".25", 0.5)
+
+        set_rect(770, -10, "#fdbb84")
+
+        set_text("Global Pandemic", 825, 10, "black", "15px")
+
+        console.log(line_func)
 
         //adding to the axes to our chart
         let xAxisTicks = svg.append("g")
@@ -171,9 +290,12 @@
             .attr("d", line(data))
             .style("fill", "none")
             .style("stroke", "darkblue")
-            .style("stroke-width", 1.8)
+            .style("stroke-width", .8)
 
     })
+
+    // let width = 1000;
+    
 
     // append the svg object to the body of the page
     var svg2 = d3.select("body")
@@ -183,13 +305,12 @@
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     
     // Read data
     d3.csv("crypto_marketcap_100_v3.csv").then(function(data) {
-        
+        let height = 700;
         data.forEach(function (row) {
             row.MarketCap = +row.MarketCap
             row.Growth_2021 = +row.Growth_2021
@@ -207,7 +328,7 @@
         // Then d3.treemap computes the position of each element of the hierarchy
         // The coordinates are added to the root object above
         d3.treemap()
-        .size([width, height])
+        .size([width-30, height])
         .padding(4)
         (root)
 
@@ -219,8 +340,8 @@
         console.log(min_val, max_val)
 
         let linearScale = d3.scaleLinear()
-            .domain([min_val, 0, 0.1, max_val])
-            .range(['red', 'lightgrey', 'lightgreen', 'darkgreen']);
+            .domain([0, 0.2, 4, max_val+1])
+            .range(['#a1d99b', '#41ab5d', '#006d2c', '#00441b']);
         console.log(linearScale)
 
 
@@ -236,7 +357,7 @@
             .attr('height', function (d) { return d.y1 - d.y0; })
             .style("stroke", "black")
             .style("fill", "grey")
-            .style("fill", d => linearScale(d.data.Growth_2021));
+            .style("fill", d => linearScale(Math.sqrt(d.data.Growth_2021)));
 
         // and to add the text labels
         svg2
@@ -244,14 +365,17 @@
         .data(root.leaves())
         .enter()
         .append("text")
-            .attr("x", function(d){ return d.x0+ 0.2    *Math.sqrt(d.data.MarketCap)/10000})    // +10 to adjust position (more right)
-            .attr("y", function(d){ return d.y0+ Math.sqrt(d.data.MarketCap)/10000})    // +20 to adjust position (lower)
+            .attr("x", function(d){ return d.x0+ 0.2*Math.sqrt(d.data.MarketCap)/10000})    // +10 to adjust position (more right)
+            .attr("y", function(d){ return d.y0+ 0.00008*Math.sqrt(d.data.MarketCap)})    // +20 to adjust position (lower)
             .text(function(d){ return d.data.Currency})
-            .attr("font-size", function(d){ return Math.sqrt(d.data.MarketCap)/10000}) 
+            .attr("font-size", function(d){ return 0.00008*Math.sqrt(d.data.MarketCap)}) 
             .attr("fill", "white")
-        })
+            .style("font", "sans-serif")
 
         console.log(svg2)
+    })
+
+        
 
     Promise.all([ //waits for all the data to load, then when loaded will return it all in one array called res
         d3.json('countries_topo.json'),
@@ -271,14 +395,14 @@
         console.log(country)
 
         let width = 1050;
-        let height = 500;
+        let height = 650;
 
         let svg3 = d3
             .select("body")
             .select(".world-map")
             .select(".svg-world-map")
 
-        let myProjection = d3.geoEquirectangular()
+        let myProjection = d3.geoNaturalEarth1()
             .fitSize([width, height], country)
 
         //path function
@@ -295,27 +419,77 @@
             .domain(["Illegal", "Contentious", "Legal"])
             .range(colors3day)
             .unknown("grey")
+
+        let popup = d3.select(".pop-up");
+        let shuffled = d3.shuffle(country.features);
         
-        console.log(country.features.properties)
-        svg3
-            .selectAll(".countries")
-            .data(country.features)
+        console.log(country.features)
+
+        let countries = svg3.append("g")
+            .selectAll(".countries2")
+            .data(shuffled)
             .join("path")
+            .attr("class", function (d) { return "countries2 p-" + d.properties.ISO })
             .attr("d", path)
             .style("fill", d => color(d.properties.Legal_Status))
             .style("stroke", "#333")
             .style("stroke-width", 1)
-            .style("pointer-events", "none")
+        
+        // let countries2 = svg3
+        //     .append("path")
+        //     .attr("d", path(innerlines))
+        //     .style("fill", "none")
+        //     .style("stroke", "#333")
+        //     .style("stroke-width", 1)
 
+        countries.on("mouseover", (event, d) => {
+            console.log(event)
+            countries
+                .style("fill-opacity", .5)
+                .style("fill", d => color(d.properties.Legal_Status))
+                .style("stroke", "#333")
+                .style("stroke-width", 1)
 
-        let countries = svg3
-            .append("path")
-            .attr("d", path(innerlines))
-            .style("fill", "none")
-            .style("stroke", "#333")
-            .style("stroke-width", 1)
-            .style("pointer-events", "none") 
+            svg3.select(".p-" + d.properties.ISO)
+                .style("stroke", "black")
+                .style("stroke-width", 2)
+                .style("fill", "lightblue")
+                .style("fill-opacity", 1)
+                .raise()
 
-        }
+            function get_status(d) {
+                return d ? d : "unregulated"
+            }
+
+            let lang = "In " + d.properties.COUNTRY + ", cryptocurrencies are " + get_status(d.properties.Legal_Status)  + "." 
+
+            popup
+                .style("opacity", 1)
+                .style("left", (event.x + 50 ) + "px")
+                .style("top", (event.y + 2200) + "px")
+                .html(lang)
+
+        countries.on("mouseout", (event, d) => {
+            // console.log(event)
+            countries
+                .style("fill-opacity", 1)
+                .style("fill", d => color(d.properties.Legal_Status))
+                .style("stroke", "#333")
+                .style("stroke-width", 1)
+
+            svg3.select(".p-" + d.properties.FID)
+                .style("fill", d => color(d.properties.Legal_Status))
+                .style("stroke", "#333")
+                .style("stroke-width", 1)
+
+            popup
+                .style("opacity", 0)
+        })
+
+        console.log(popup)
+
+        
+        
+        })}
 
 </script>
