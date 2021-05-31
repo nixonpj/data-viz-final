@@ -4,23 +4,23 @@ Bitcoin,Cryptocurrency,0.22,669828489121.00
 Ethereum,Cryptocurrency,2.31,280476337003.00
 Tether,Cryptocurrency,0.00,61742542348.00
 Cardano,Cryptocurrency,8.04,50624555767.00
-Binance Coin,Cryptocurrency,7.68,50455558861.00
+BinanceCoin,Cryptocurrency,7.68,50455558861.00
 XRP,Cryptocurrency,2.81,41731449383.00
 Dogecoin,Cryptocurrency,52.62,39571262802.00
-USD Coin,Cryptocurrency,0.00,22426226106.00
+USDCoin,Cryptocurrency,0.00,22426226106.00
 Polkadot,Cryptocurrency,1.48,19426711593.00
 Uniswap,Cryptocurrency,4.51,14757093150.00
-Internet Computer,Cryptocurrency,,13865666588.00
-Bitcoin Cash,Cryptocurrency,0.94,12468402690.00
+InternetComputer,Cryptocurrency,,13865666588.00
+BitcoinCash,Cryptocurrency,0.94,12468402690.00
 Chainlink,Cryptocurrency,1.31,11760328886.00
 Litecoin,Cryptocurrency,0.36,11488006187.00
 Polygon,Cryptocurrency,102.30,11428763134.00
 Stellar,Cryptocurrency,1.85,8728138586.00
-Binance USD,Cryptocurrency,0.00,8606870650.00
+BinanceUSD,Cryptocurrency,0.00,8606870650.00
 Solana,Cryptocurrency,14.57,7821998612.00
-Ethereum Classic,Cryptocurrency,10.61,7703251077.00
+EthereumClassic,Cryptocurrency,10.61,7703251077.00
 VeChain,Cryptocurrency,4.65,6933540874.00
-Wrapped Bitcoin,Cryptocurrency,0.22,6679381764.00
+Wrapped_Bitcoin,Cryptocurrency,0.22,6679381764.00
 THETA,Cryptocurrency,2.33,6561576382.00
 EOS,Cryptocurrency,1.31,5801063156.00
 TRON,Cryptocurrency,1.68,5177808916.00
@@ -31,28 +31,28 @@ Aave,Cryptocurrency,2.65,4213775112.00
 Neo,Cryptocurrency,2.58,3664384679.00
 Klaytn,Cryptocurrency,1.84,3472381010.00
 Maker,Cryptocurrency,4.70,3291026829.00
-Bitcoin SV,Cryptocurrency,0.03,3136270428.00
-SHIBA INU,Cryptocurrency,,3107726068.00
-FTX Token,Cryptocurrency,4.43,2984483887.00
+BitcoinSV,Cryptocurrency,0.03,3136270428.00
+SHIBA_INU,Cryptocurrency,,3107726068.00
+FTX_Token,Cryptocurrency,4.43,2984483887.00
 Tezos,Cryptocurrency,0.65,2914197018.00
 IOTA,Cryptocurrency,2.56,2884277368.00
-Crypto.com Coin,Cryptocurrency,0.89,2847349003.00
+Crypto.com_Coin,Cryptocurrency,0.89,2847349003.00
 Cosmos,Cryptocurrency,1.17,2680938718.00
 Kusama,Cryptocurrency,3.60,2709046893.00
 PancakeSwap,Cryptocurrency,23.31,2654562741.00
 Algorand,Cryptocurrency,1.14,2607342876.00
-Huobi Token,Cryptocurrency,1.83,2576225584.00
+HuobiToken,Cryptocurrency,1.83,2576225584.00
 Terra,Cryptocurrency,8.65,2556054003.00
 BitTorrent,Cryptocurrency,11.45,2416761558.00
 THORChain,Cryptocurrency,7.55,2361438141.00
 Avalanche,Cryptocurrency,3.53,2159988604.00
-UNUS SED LEO,Cryptocurrency,0.66,2151839566.00
+UNUS_SED_LEO,Cryptocurrency,0.66,2151839566.00
 Compound,Cryptocurrency,1.83,2149377074.00
 Decred,Cryptocurrency,2.78,2016539861.00
-Bitcoin BEP2,Cryptocurrency,0.27,1958468959.00
+BitcoinBEP2,Cryptocurrency,0.27,1958468959.00
 TerraUSD,Cryptocurrency,0.00,1953878105.00
 Dash,Cryptocurrency,1.08,1861817483.00
-Hedera Hashgraph,Cryptocurrency,5.68,1853860613.00
+Hedera_Hashgraph,Cryptocurrency,5.68,1853860613.00
 Zcash,Cryptocurrency,1.69,1814946042.00
 Celsius,Cryptocurrency,0.32,1724280021.00
 Elrond,Cryptocurrency,2.61,1648735758.00
@@ -78,8 +78,8 @@ Nexo,Cryptocurrency,2.44,1120198710.00
 Stacks,Cryptocurrency,1.25,1111685497.00
 Revain,Cryptocurrency,0.07,1064463793.00
 Basic Attention Token,Cryptocurrency,2.46,1061155122.00
-Bitcoin Gold,Cryptocurrency,5.88,1024358823.00
-The Graph,Cryptocurrency,1.11,952408694.00
+BitcoinGold,Cryptocurrency,5.88,1024358823.00
+TheGraph,Cryptocurrency,1.11,952408694.00
 Nano,Cryptocurrency,5.68,917388402.00
 Ontology,Cryptocurrency,1.37,916182345.00
 Mdex,Cryptocurrency,,909768716.00
