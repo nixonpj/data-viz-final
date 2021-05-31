@@ -80,7 +80,7 @@
 
 <script>
     let width = 1000;
-    let height = 1000;
+    let height = 850;
 
     // let svg = d3.select("body")
     //     .select(".line-chart-container")
@@ -176,10 +176,11 @@
 
     
     // Read data
-    d3.csv("crypto_marketcap_100_v2.csv").then(function(data) {
+    d3.csv("crypto_marketcap_100_v3.csv").then(function(data) {
         
         data.forEach(function (row) {
             row.MarketCap = +row.MarketCap
+            row.Growth_2021 = +row.Growth_2021
         }) 
         console.log(data)
 
@@ -199,6 +200,18 @@
         (root)
 
         console.log(root.leaves())
+
+        min_val = d3.min(data, d => d.Growth_2021)
+        max_val = d3.max(data, d => Math.sqrt(d.Growth_2021))
+        
+        console.log(min_val, max_val)
+
+        let linearScale = d3.scaleLinear()
+            .domain([min_val, 0, 0.1, max_val])
+            .range(['red', 'lightgrey', 'lightgreen', 'darkgreen']);
+        console.log(linearScale)
+
+
         // use this information to add rectangles:
         svg2
         .selectAll("rect")
@@ -210,7 +223,8 @@
             .attr('width', function (d) { return d.x1 - d.x0; })
             .attr('height', function (d) { return d.y1 - d.y0; })
             .style("stroke", "black")
-            .style("fill", "#69b3a2");
+            .style("fill", "grey")
+            .style("fill", d => linearScale(d.data.Growth_2021));
 
         // and to add the text labels
         svg2
@@ -218,11 +232,11 @@
         .data(root.leaves())
         .enter()
         .append("text")
-            .attr("x", function(d){ return d.x0+10})    // +10 to adjust position (more right)
-            .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
+            .attr("x", function(d){ return d.x0+ 0.2    *Math.sqrt(d.data.MarketCap)/10000})    // +10 to adjust position (more right)
+            .attr("y", function(d){ return d.y0+ Math.sqrt(d.data.MarketCap)/10000})    // +20 to adjust position (lower)
             .text(function(d){ return d.data.Currency})
-            .attr("font-size", "15px")
-            .attr("fill", "black")
+            .attr("font-size", function(d){ return Math.sqrt(d.data.MarketCap)/10000}) 
+            .attr("fill", "white")
         })
 
         console.log(svg2)
